@@ -1,5 +1,5 @@
 # SoftUni
-Some interesting Python tasks and my solutions during my education in Sofuni.
+Some interesting Python tasks and my solutions during my education in Softuni.
 
 1. The first one is from matrixes and it represents my personal idea on the problem and its solution. 
 My approach is totally different from the author's, which led to much shorter code because of the logic that I used.
