@@ -1,0 +1,29 @@
+def insert_data():
+    director1 = Director.objects.create(full_name='Akira Kurosawa', years_of_experience=0)
+    director2 = Director.objects.create(full_name='Francis Ford Coppola', years_of_experience=50)
+    director3 = Director.objects.create(full_name='Martin Scorsese', nationality='American and Italian',
+                                     years_of_experience=60)
+
+    actor1 = Actor.objects.create(full_name='Al Pacino')
+    actor2 = Actor.objects.create(full_name='Robert Duvall')
+    actor3 = Actor.objects.create(full_name='Joaquin Phoenix')
+
+    movie1 = Movie.objects.create(title='The Godfather',
+                                  rating=9.9,
+                                  director=director2,
+                                  starring_actor=actor1,
+                                  is_awarded=True,
+                                  release_date='1972-03-24'
+                                  )
+    movie1.actors.add(actor1)
+    movie1.actors.add(actor2)
+
+    movie2 = Movie.objects.create(title='Apocalypse Now', rating=9.1, release_date='1979-08-15', director=director2)
+    movie2.actors.add(actor1)
+
+    movie3 = Movie.objects.create(title='Gladiator', rating=9.5, release_date='2000-05-05', director=director3)
+    movie3.actors.add(actor2)
+    movie3.actors.add(actor3)
+
+
+insert_data()
