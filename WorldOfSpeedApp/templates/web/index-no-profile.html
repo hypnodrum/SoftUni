@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static '/style/style.css'%}" />
+    <title>WorldOfSpeed</title>
+  </head>
+  <body>
+    <div id="box">
+      <header>
+        <!-- Navigation Bar -->
+        <h1>
+          <a class="index-navigation" href="#"
+            ><span>World of Speed</span></a
+          >
+        </h1>
+        <nav>
+          <!-- if the user has not created a profile -->
+          <a href="{% url 'create_profile' %}">Create Profile</a>
+        </nav>
+      </header>
+        <!-- headlines -->
+      <section id="index-headline">
+        <div class="index-message">
+          <h2>Welcome <span>to</span> the <span>World</span> of<span>Speed</span>!</h2>
+        </div>
+        <img src="{% static '/images/racing-index.png'%}" alt="car" />
+      </section>
+        <!-- footer -->
+      <footer>&copy;SoftUni Team 2024. All rights reserved.</footer>
+    </div>
+  </body>
+</html>

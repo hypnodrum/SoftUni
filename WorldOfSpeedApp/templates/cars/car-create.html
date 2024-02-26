@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main_content %}
+      <section id="create-page" class="auth">
+        <form action="{% url 'create_car'%}" method="post">
+          <div class="container">
+              {{ form }}
+            <input class="btn" type="submit" value="Create Car" />
+              {% csrf_token %}
+          </div>
+        </form>
+      </section>
+{% endblock %}

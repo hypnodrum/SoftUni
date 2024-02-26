@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main_content %}
+      <section id="delete-page" class="auth">
+        <form action="{% url 'delete_car' pk=car.pk %}" method="post">
+          <div class="container">
+            <h1>Delete Car</h1>
+
+            <label for="car_type">Type:</label>
+            <select disabled required="" id="car_type">
+                <option>{{ car_type }}</option>
+            </select>
+
+            <label for="model">Model:</label>
+            <input type="text"
+                   value={{ car_model }}
+                   disabled required=""
+                   readonly="readonly"
+                   id="model"
+            />
+
+            <label for="year">Year:</label>
+            <input
+              type="number"
+              name="year"
+              value= {{ car_year }}
+              disabled="disabled"
+              readonly="readonly"
+              required=""
+              id="year"
+            />
+
+            <label for="image_url">Image URL:</label>
+            <input
+              type="url"
+              name="image_url"
+              value={{ car_image_url }}
+              disabled="disabled"
+              readonly="readonly"
+              required=""
+              id="image_url"
+            />
+
+            <label for="price">Price:</label>
+            <input
+              type="number"
+              name="price"
+              value={{ car_price }}
+              step="any"
+              disabled="disabled"
+              readonly="readonly"
+              required=""
+              id="price"
+            />
+
+              <input class="btn submit" type="submit" value="Delete Car" />
+              {% csrf_token %}
+          </div>
+        </form>
+      </section>
+ {%  endblock %}
